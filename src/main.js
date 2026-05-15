@@ -1,56 +1,62 @@
 import './style.css'
 
+import { matematicaPage } from './pages/matematica'
+import { lenguaPage } from './pages/lengua'
+
 document.querySelector('#app').innerHTML = `
+
   <div class="container">
 
     <header>
+
       <h1>SuperEstudiante IA</h1>
 
       <p>
-        Respuestas, tareas y ayuda escolar para estudiantes del Ecuador.
+        Plataforma educativa para estudiantes del Ecuador
       </p>
+
     </header>
 
-    <section class="search-box">
+    <nav>
 
-      <input 
-        type="text" 
-        placeholder="Ejemplo: Resolver fracciones 9no EGB"
-      />
-
-      <button>
-        Buscar
+      <button id="btnMate">
+        Matemática
       </button>
 
-    </section>
+      <button id="btnLengua">
+        Lengua
+      </button>
 
-    <section class="cards">
+    </nav>
 
-      <div class="card">
-        <h2>Matemática</h2>
+    <main id="content">
 
-        <p>
-          Ejercicios resueltos paso a paso.
-        </p>
-      </div>
+      <h2>
+        Bienvenido
+      </h2>
 
-      <div class="card">
-        <h2>Ciencias</h2>
+      <p>
+        Selecciona una materia.
+      </p>
 
-        <p>
-          Tareas y explicaciones fáciles.
-        </p>
-      </div>
-
-      <div class="card">
-        <h2>Lengua</h2>
-
-        <p>
-          Resúmenes y actividades escolares.
-        </p>
-      </div>
-
-    </section>
+    </main>
 
   </div>
+
 `
+
+const content = document.querySelector('#content')
+
+document.querySelector('#btnMate')
+.addEventListener('click', ()=>{
+
+  content.innerHTML = matematicaPage()
+
+})
+
+document.querySelector('#btnLengua')
+.addEventListener('click', ()=>{
+
+  content.innerHTML = lenguaPage()
+
+})

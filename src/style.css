@@ -74,3 +74,28 @@ header p{
   margin-bottom:15px;
   color:#2563eb;
 }
+
+nav{
+  display:flex;
+  gap:10px;
+  margin-bottom:30px;
+}
+
+nav button{
+  padding:12px 20px;
+  border:none;
+  background:#2563eb;
+  color:white;
+  border-radius:10px;
+  cursor:pointer;
+}
+
+.page{
+  background:white;
+  padding:30px;
+  border-radius:15px;
+}
+
+.task{
+  margin-top:20px;
+}
