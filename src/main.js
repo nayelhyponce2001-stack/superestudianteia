@@ -2,6 +2,9 @@ import './style.css'
 
 import { matematicaPage } from './pages/matematica'
 import { lenguaPage } from './pages/lengua'
+import { fraccionesPage } from './pages/fracciones'
+import { balancePage } from './pages/balance'
+import { energiaPage } from './pages/energia'
 
 document.querySelector('#app').innerHTML = `
 
@@ -27,6 +30,18 @@ document.querySelector('#app').innerHTML = `
         Lengua
       </button>
 
+      <button id="btnFracciones">
+  Fracciones
+</button>
+
+<button id="btnBalance">
+  Balance
+</button>
+
+<button id="btnEnergia">
+  Energía
+</button>
+
     </nav>
 
     <main id="content">
@@ -48,15 +63,15 @@ document.querySelector('#app').innerHTML = `
 const content = document.querySelector('#content')
 
 document.querySelector('#btnMate')
-.addEventListener('click', ()=>{
+  .addEventListener('click', () => {
 
-  content.innerHTML = matematicaPage()
+    content.innerHTML = matematicaPage()
 
-})
+  })
 
 document.querySelector('#btnLengua')
-.addEventListener('click', ()=>{
+  .addEventListener('click', () => {
 
-  content.innerHTML = lenguaPage()
+    content.innerHTML = lenguaPage()
 
-})
+  })
