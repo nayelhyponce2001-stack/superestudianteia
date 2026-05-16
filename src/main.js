@@ -3,33 +3,29 @@ import './style.css'
 import Navigo from 'navigo'
 
 import { homePage } from './pages/home'
-import { fraccionesPage } from './pages/fracciones'
-import { balancePage } from './pages/balance'
-import { energiaPage } from './pages/energia'
+
+import { articlePage } from './pages/article'
+
+import { articles } from './data/articles'
 
 const app = document.querySelector('#app')
 
 const router = new Navigo('/')
 
-router
-.on('/', ()=>{
+router.on('/', ()=>{
 
-  app.innerHTML = homePage()
-
-})
-.on('/fracciones', ()=>{
-
-  app.innerHTML = fraccionesPage()
+  app.innerHTML = homePage(articles)
 
 })
-.on('/balance', ()=>{
 
-  app.innerHTML = balancePage()
+articles.forEach(article => {
+
+  router.on(`/${article.slug}`, ()=>{
+
+    app.innerHTML = articlePage(article)
+
+  })
 
 })
-.on('/energia', ()=>{
 
-  app.innerHTML = energiaPage()
-
-})
-.resolve()
+router.resolve()

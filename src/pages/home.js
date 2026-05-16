@@ -1,4 +1,28 @@
-export function homePage(){
+export function homePage(articles){
+
+  const cards = articles.map(article => {
+
+    return `
+
+      <a 
+        href="/${article.slug}" 
+        data-navigo 
+        class="card"
+      >
+
+        <h3>
+          ${article.title}
+        </h3>
+
+        <p>
+          Ver explicación completa.
+        </p>
+
+      </a>
+
+    `
+
+  }).join('')
 
   return `
 
@@ -11,7 +35,7 @@ export function homePage(){
         </h1>
 
         <p>
-          Respuestas, tareas y ayuda escolar para estudiantes del Ecuador
+          Tareas, respuestas y ayuda escolar para estudiantes del Ecuador
         </p>
 
       </header>
@@ -20,7 +44,7 @@ export function homePage(){
 
         <input 
           type="text"
-          placeholder="Buscar tarea o tema..."
+          placeholder="Buscar tarea..."
         >
 
         <button>
@@ -30,58 +54,12 @@ export function homePage(){
       </section>
 
       <h2 class="section-title">
-        Materias populares
+        Contenido educativo
       </h2>
 
       <section class="cards">
 
-        <a href="/fracciones" data-navigo class="card">
-
-          <h3>
-            Matemática
-          </h3>
-
-          <p>
-            Fracciones, ejercicios y problemas resueltos.
-          </p>
-
-        </a>
-
-        <a href="/balance" data-navigo class="card">
-
-          <h3>
-            Educación Financiera
-          </h3>
-
-          <p>
-            Balance de gastos y ejemplos escolares.
-          </p>
-
-        </a>
-
-        <a href="/energia" data-navigo class="card">
-
-          <h3>
-            Ciencias Naturales
-          </h3>
-
-          <p>
-            Energía, naturaleza y ciencias.
-          </p>
-
-        </a>
-
-      </section>
-
-      <section class="info">
-
-        <h2>
-          Aprende más rápido
-        </h2>
-
-        <p>
-          Encuentra tareas resueltas, explicaciones fáciles y ejercicios escolares paso a paso.
-        </p>
+        ${cards}
 
       </section>
 
