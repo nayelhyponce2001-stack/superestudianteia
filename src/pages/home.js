@@ -30,6 +30,12 @@ export function homePage(articles){
 
       <header>
 
+        <img 
+          src="/logo.png" 
+          alt="SuperEstudiante IA"
+          class="logo"
+        >
+
         <h1>
           SuperEstudiante IA
         </h1>
@@ -62,6 +68,14 @@ export function homePage(articles){
         ${cards}
 
       </section>
+
+      <footer>
+
+        <p>
+          © 2026 SuperEstudiante IA
+        </p>
+
+      </footer>
 
     </div>
 
