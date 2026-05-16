@@ -2,43 +2,51 @@ export function balancePage(){
 
   return `
 
-    <div class="page">
+    <div class="container">
 
-      <h1>
-        Balance de gastos escolar
-      </h1>
+      <nav>
 
-      <p>
-        Un balance de gastos sirve para controlar ingresos y egresos.
-      </p>
+        <a href="/" data-navigo>
+          Inicio
+        </a>
 
-      <h2>
-        Ejemplo
-      </h2>
+      </nav>
 
-      <p>
-        Ingreso: $50
-      </p>
+      <div class="page">
 
-      <p>
-        Gastos:
-      </p>
+        <h1>
+          Balance de gastos escolar
+        </h1>
 
-      <p>
-        Transporte: $10
-      </p>
+        <p>
+          Un balance de gastos sirve para controlar ingresos y egresos.
+        </p>
 
-      <p>
-        Alimentación: $15
-      </p>
+        <h2>
+          Ejemplo
+        </h2>
 
-      <p>
-        Materiales: $5
-      </p>
+        <p>
+          Ingreso: $50
+        </p>
 
-      <p>
-        Saldo final: $20
-      </p>
+        <p>
+          Transporte: $10
+        </p>
+
+        <p>
+          Alimentación: $15
+        </p>
+
+        <p>
+          Materiales: $5
+        </p>
+
+        <p>
+          Saldo final: $20
+        </p>
+
+      </div>
 
     </div>
 

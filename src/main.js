@@ -1,77 +1,35 @@
 import './style.css'
 
-import { matematicaPage } from './pages/matematica'
-import { lenguaPage } from './pages/lengua'
+import Navigo from 'navigo'
+
+import { homePage } from './pages/home'
 import { fraccionesPage } from './pages/fracciones'
 import { balancePage } from './pages/balance'
 import { energiaPage } from './pages/energia'
 
-document.querySelector('#app').innerHTML = `
+const app = document.querySelector('#app')
 
-  <div class="container">
+const router = new Navigo('/')
 
-    <header>
+router
+.on('/', ()=>{
 
-      <h1>SuperEstudiante IA</h1>
+  app.innerHTML = homePage()
 
-      <p>
-        Plataforma educativa para estudiantes del Ecuador
-      </p>
+})
+.on('/fracciones', ()=>{
 
-    </header>
+  app.innerHTML = fraccionesPage()
 
-    <nav>
+})
+.on('/balance', ()=>{
 
-      <button id="btnMate">
-        Matemática
-      </button>
+  app.innerHTML = balancePage()
 
-      <button id="btnLengua">
-        Lengua
-      </button>
+})
+.on('/energia', ()=>{
 
-      <button id="btnFracciones">
-  Fracciones
-</button>
+  app.innerHTML = energiaPage()
 
-<button id="btnBalance">
-  Balance
-</button>
-
-<button id="btnEnergia">
-  Energía
-</button>
-
-    </nav>
-
-    <main id="content">
-
-      <h2>
-        Bienvenido
-      </h2>
-
-      <p>
-        Selecciona una materia.
-      </p>
-
-    </main>
-
-  </div>
-
-`
-
-const content = document.querySelector('#content')
-
-document.querySelector('#btnMate')
-  .addEventListener('click', () => {
-
-    content.innerHTML = matematicaPage()
-
-  })
-
-document.querySelector('#btnLengua')
-  .addEventListener('click', () => {
-
-    content.innerHTML = lenguaPage()
-
-  })
+})
+.resolve()

@@ -2,35 +2,47 @@ export function energiaPage(){
 
   return `
 
-    <div class="page">
+    <div class="container">
 
-      <h1>
-        Tipos de energía
-      </h1>
+      <nav>
 
-      <p>
-        La energía permite realizar trabajo y movimiento.
-      </p>
+        <a href="/" data-navigo>
+          Inicio
+        </a>
 
-      <h2>
-        Tipos principales
-      </h2>
+      </nav>
 
-      <p>
-        Energía solar.
-      </p>
+      <div class="page">
 
-      <p>
-        Energía eléctrica.
-      </p>
+        <h1>
+          Tipos de energía
+        </h1>
 
-      <p>
-        Energía química.
-      </p>
+        <p>
+          La energía permite realizar trabajo y movimiento.
+        </p>
 
-      <p>
-        Energía térmica.
-      </p>
+        <h2>
+          Tipos principales
+        </h2>
+
+        <p>
+          Energía solar.
+        </p>
+
+        <p>
+          Energía eléctrica.
+        </p>
+
+        <p>
+          Energía química.
+        </p>
+
+        <p>
+          Energía térmica.
+        </p>
+
+      </div>
 
     </div>
 
