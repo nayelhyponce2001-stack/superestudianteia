@@ -1,4 +1,10 @@
-export function homePage(articles){
+import { supabase } from '../lib/supabase'
+
+export async function homePage(articles){
+
+  const { data } = await supabase.auth.getUser()
+
+  const user = data.user
 
   const cards = articles.map(article => {
 
@@ -48,9 +54,27 @@ export function homePage(articles){
 
       <nav>
 
-        <a href="/login" data-navigo>
-          Crear cuenta
-        </a>
+        ${
+          user
+          ?
+          `
+            <span class="user-email">
+
+              ${user.email}
+
+            </span>
+
+            <a href="#" id="logoutBtn">
+              Cerrar sesión
+            </a>
+          `
+          :
+          `
+            <a href="/login" data-navigo>
+              Crear cuenta
+            </a>
+          `
+        }
 
       </nav>
 

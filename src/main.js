@@ -10,13 +10,35 @@ import { loginPage } from './pages/login'
 
 import { articles } from './data/articles'
 
+import { supabase } from './lib/supabase'
+
 const app = document.querySelector('#app')
 
 const router = new Navigo('/')
 
-router.on('/', ()=>{
+async function renderHome(){
 
-  app.innerHTML = homePage(articles)
+  app.innerHTML = await homePage(articles)
+
+  const logoutBtn = document.querySelector('#logoutBtn')
+
+  if(logoutBtn){
+
+    logoutBtn.addEventListener('click', async()=>{
+
+      await supabase.auth.signOut()
+
+      location.reload()
+
+    })
+
+  }
+
+}
+
+router.on('/', async()=>{
+
+  await renderHome()
 
 })
 
