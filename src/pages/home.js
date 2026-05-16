@@ -46,6 +46,14 @@ export function homePage(articles){
 
       </header>
 
+      <nav>
+
+        <a href="/login" data-navigo>
+          Crear cuenta
+        </a>
+
+      </nav>
+
       <section class="search-box">
 
         <input 
