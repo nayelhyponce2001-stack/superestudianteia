@@ -11,8 +11,7 @@ export async function homePage(articles){
     return `
 
       <a 
-        href="/${article.slug}" 
-        data-navigo 
+        href="#/${article.slug}" 
         class="card"
       >
 
@@ -70,7 +69,7 @@ export async function homePage(articles){
           `
           :
           `
-            <a href="/login" data-navigo>
+            <a href="#/login">
               Crear cuenta
             </a>
           `

@@ -4,6 +4,8 @@ export function loginPage(){
 
   setTimeout(()=>{
 
+    // REGISTRO
+
     const form = document.querySelector('#loginForm')
 
     form.addEventListener('submit', async(e)=>{
@@ -32,6 +34,20 @@ export function loginPage(){
 
     })
 
+    // GOOGLE LOGIN
+
+    const googleBtn = document.querySelector('#googleLogin')
+
+    googleBtn.addEventListener('click', async()=>{
+
+      await supabase.auth.signInWithOAuth({
+
+        provider:'google'
+
+      })
+
+    })
+
   },100)
 
   return `
@@ -40,7 +56,7 @@ export function loginPage(){
 
       <nav>
 
-        <a href="/" data-navigo>
+        <a href="#/">
           Inicio
         </a>
 
@@ -49,8 +65,23 @@ export function loginPage(){
       <div class="page">
 
         <h1>
-          Crear cuenta
+          Crear cuenta o iniciar sesión
         </h1>
+
+        <button 
+          id="googleLogin"
+          class="google-btn"
+        >
+
+          Continuar con Google
+
+        </button>
+
+        <div class="separator">
+
+          <span>o</span>
+
+        </div>
 
         <form id="loginForm" class="form">
 

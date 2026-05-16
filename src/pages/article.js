@@ -6,7 +6,7 @@ export function articlePage(article){
 
       <nav>
 
-        <a href="/" data-navigo>
+        <a href="#/">
           Inicio
         </a>
 

@@ -14,7 +14,9 @@ import { supabase } from './lib/supabase'
 
 const app = document.querySelector('#app')
 
-const router = new Navigo('/')
+const router = new Navigo('/', {
+  hash:true
+})
 
 async function renderHome(){
 
@@ -36,7 +38,8 @@ async function renderHome(){
 
 }
 
-router.on('/', async()=>{
+router
+.on('/', async()=>{
 
   await renderHome()
 
